@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>spacegame</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <jme3_g>org.jmonkeyengine</jme3_g>
+        <jme3_v>3.4.0-stable</jme3_v>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>mvnrepository</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-core</artifactId>
+            <version>${jme3_v}</version>
+        </dependency>
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-desktop</artifactId>
+            <version>${jme3_v}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-lwjgl</artifactId>
+            <version>${jme3_v}</version>
+        </dependency>
+        <dependency>
+            <groupId>${jme3_g}</groupId>
+            <artifactId>jme3-effects</artifactId>
+            <version>${jme3_v}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources/assets</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.6.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>
+                                game.AnotherSpaceGame
+                            </mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
